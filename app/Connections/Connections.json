@@ -1,0 +1,51 @@
+{
+  "46985cb1-d21f-41ab-9490-3add9c911f5d": {
+    "appActions": [
+      "UserProfile_V2",
+      "UserPhoto"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1694/1.0.1694.3752/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "46985cb1-d21f-41ab-9490-3add9c911f5d"
+  },
+  "7d3fddbd-ceba-4176-8a95-d78fb4894ac3": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1694/1.0.1694.3752/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://jehl.sharepoint.com/sites/WorkflowDevelopment-Addison-Personal": {
+        "dataSources": {
+          "DummyEmpList": {
+            "tableName": "a4925c91-ce05-42b0-acb9-47a68a8bc1b8"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "DummyEmpList"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7d3fddbd-ceba-4176-8a95-d78fb4894ac3"
+  }
+}

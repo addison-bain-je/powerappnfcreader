@@ -1,0 +1,219 @@
+Screen1 As screen:
+
+    Button1 As button:
+        Height: =70
+        OnSelect: |-
+            =With(ReadNFC(),
+                If(!IsBlank(Identifier),Notify("NFC detected"));
+                Set(id, Coalesce(Identifier, "No ID"));
+                ForAll(NDEFRecords, Collect(tagRecords, {ID: id, Value: Coalesce(Text, URI)})));
+        Size: =24
+        Text: ="Read NFC Tag"
+        Width: =280
+        X: =183
+        Y: =151
+        ZIndex: =1
+
+    "Gal_TagRecordsCol As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        BorderThickness: =1
+        DelayItemLoading: =true
+        Height: =588
+        Items: =tagRecords
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =160
+        Width: =550
+        X: =48
+        Y: =374
+        ZIndex: =1
+
+        Tag_EmpID As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =13
+            Text: |-
+                =ThisItem.Value
+                //"12222"
+            Width: =75
+            X: =129
+            Y: =117
+            ZIndex: =1
+
+        Subtitle_TagID_Hide As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.ID
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =false
+            Width: =189
+            X: =361
+            ZIndex: =2
+
+        DeleteRecord As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(168, 0, 0, 1)
+            Height: =50
+            Icon: =Icon.Trash
+            OnSelect: =Remove(tagRecords,LookUp(tagRecords,ID=Gal_TagRecordsCol.Selected.ID))
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Tooltip: ="View item details"
+            Width: =50
+            X: =488
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =3
+
+        Separator2 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =4
+
+        Rectangle2 As rectangle:
+            Height: =Parent.TemplateHeight - Separator2.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =5
+
+        Emp_Country As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =13
+            Text: |-
+                =LookUp(DummyEmpList,EmpNumber=ThisItem.Value,HomeCountry)
+                //LookUp(DummyEmpList,EmpNumber="12222",HomeCountry)
+            Width: =140
+            X: =209
+            Y: =117
+            ZIndex: =6
+
+        Emp_Name As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Semibold)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: |-
+                =If(!IsBlank(ThisItem.Value),
+                Office365Users.UserProfileV2(LookUp(DummyEmpList,EmpNumber=ThisItem.Value,EmailAddress)).displayName,Blank())
+                //Office365Users.UserProfileV2(LookUp(DummyEmpList,EmpNumber="12222",EmailAddress)).displayName
+            Width: =250
+            X: =130
+            Y: =23
+            ZIndex: =7
+
+        Emp_Img As image:
+            Height: =90
+            Image: |-
+                =If(!IsBlank(ThisItem.Value),
+                Office365Users.UserPhoto(LookUp(DummyEmpList,EmpNumber=ThisItem.Value,EmailAddress)),Blank())
+                //Office365Users.UserPhoto(LookUp(DummyEmpList,EmpNumber="12222",EmailAddress))
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =60
+            RadiusBottomRight: =60
+            RadiusTopLeft: =60
+            RadiusTopRight: =60
+            Width: =90
+            X: =14
+            Y: =40
+            ZIndex: =8
+
+        Emp_Country_1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            Italic: =true
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                =LookUp(DummyEmpList,EmpNumber=ThisItem.Value,EmailAddress)
+                //LookUp(DummyEmpList,EmpNumber="12222",EmailAddress)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =350
+            X: =130
+            Y: =61
+            ZIndex: =9
+
+        Emp_Country_2 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =13
+            Text: |-
+                =If(!IsBlank(ThisItem.Value),
+                Office365Users.UserProfileV2(LookUp(DummyEmpList,EmpNumber=ThisItem.Value,EmailAddress)).jobTitle,Blank())
+                //Office365Users.UserProfileV2(LookUp(DummyEmpList,EmpNumber="12222",EmailAddress)).jobTitle
+            Width: =300
+            X: =129
+            Y: =87
+            ZIndex: =10
+
+        Emp_CostCenter As label:
+            Align: =Align.Right
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =13
+            Text: |-
+                =If(!IsBlank(ThisItem.Value),
+                Office365Users.UserProfileV2(LookUp(DummyEmpList,EmpNumber=ThisItem.Value,EmailAddress)).department,Blank())
+                //Office365Users.UserProfileV2(LookUp(DummyEmpList,EmpNumber="12222",EmailAddress)).department
+            Width: =100
+            X: =317
+            Y: =119
+            ZIndex: =11
+
+    Icon1 As icon.CancelBadge:
+        Height: =48
+        Icon: =Icon.CancelBadge
+        OnSelect: =Exit()
+        Width: =48
+        X: =558
+        Y: =20
+        ZIndex: =2
+
+    Label1 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =22
+        Text: ="Attendance List"
+        Width: =550
+        X: =48
+        Y: =300
+        ZIndex: =3
+

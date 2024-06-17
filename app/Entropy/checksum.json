@@ -1,0 +1,32 @@
+{
+  "ClientPerFileChecksums": {
+    ".gitignore": "C8_VaC8EcEG56Ufcy1DFyC8Ky19iV9xSsXMDIAcmF2GTj8=",
+    "AppCheckerResult.sarif": "C8_k5l71FI4dAc908h3TAtr8Qi8KKbdE+l2oKVuOyNXrN0=",
+    "Controls\\1.json": "C8_/PwNEU6dV00x9Xr4Yt93zX1EmsxAh36PVgOdFy9WD8g=",
+    "Controls\\4.json": "C8_QseQKuBd44rSTIsNGgyXX6vKzVjjo6KfbrTPWDc/wMQ=",
+    "Header.json": "C8_qCWD15RPHTSiehGxEm+i3Nzlpo3tQ0ycJ3167TExww0=",
+    "Properties.json": "C8_cMc/DyQje4Vcx7rnf2cpphWtR1qejCIgkBMj0CoTRks=",
+    "References\\DataSources.json": "C8_3dJccHerGpVrjy2/IsDooK95KsMCBDllmuRE5P7iJYE=",
+    "References\\ModernThemes.json": "C8_KDQJ/3t27vgKx25iCQB/PGqxkWE34ZB7Eyb+RxNxY0k=",
+    "References\\Resources.json": "C8_s+se9qfOYnCKwfIt6gbv1FGBHW47JCt5d/CkUpqbcjk=",
+    "References\\Templates.json": "C8_TgVpIMehFMjL4uSbJE8XvlnbkfcN2iLIIbRWnhsM+WE=",
+    "References\\Themes.json": "C8_oCZZeuoC7+zyBGQLt9MZ2S+Xl34LpAsWKWXX0Qw0/YE=",
+    "Resources\\PublishInfo.json": "C8_geA6lm7cbnX0lF3uFkUlOmCsSgwnWk38XVNTjKwNUjU="
+  },
+  "ClientStampedChecksum": "C8_W94p4whvqCrF8woqWg7oUrO3jP7FcW3UvtsVVzRfPW0=",
+  "ServerPerFileChecksums": {
+    ".gitignore": "C8_VaC8EcEG56Ufcy1DFyC8Ky19iV9xSsXMDIAcmF2GTj8=",
+    "AppCheckerResult.sarif": "C8_k5l71FI4dAc908h3TAtr8Qi8KKbdE+l2oKVuOyNXrN0=",
+    "Controls\\1.json": "C8_/PwNEU6dV00x9Xr4Yt93zX1EmsxAh36PVgOdFy9WD8g=",
+    "Controls\\4.json": "C8_QseQKuBd44rSTIsNGgyXX6vKzVjjo6KfbrTPWDc/wMQ=",
+    "Header.json": "C8_qCWD15RPHTSiehGxEm+i3Nzlpo3tQ0ycJ3167TExww0=",
+    "Properties.json": "C8_cMc/DyQje4Vcx7rnf2cpphWtR1qejCIgkBMj0CoTRks=",
+    "References\\DataSources.json": "C8_3dJccHerGpVrjy2/IsDooK95KsMCBDllmuRE5P7iJYE=",
+    "References\\ModernThemes.json": "C8_KDQJ/3t27vgKx25iCQB/PGqxkWE34ZB7Eyb+RxNxY0k=",
+    "References\\Resources.json": "C8_s+se9qfOYnCKwfIt6gbv1FGBHW47JCt5d/CkUpqbcjk=",
+    "References\\Templates.json": "C8_TgVpIMehFMjL4uSbJE8XvlnbkfcN2iLIIbRWnhsM+WE=",
+    "References\\Themes.json": "C8_oCZZeuoC7+zyBGQLt9MZ2S+Xl34LpAsWKWXX0Qw0/YE=",
+    "Resources\\PublishInfo.json": "C8_geA6lm7cbnX0lF3uFkUlOmCsSgwnWk38XVNTjKwNUjU="
+  },
+  "ServerStampedChecksum": "C8_W94p4whvqCrF8woqWg7oUrO3jP7FcW3UvtsVVzRfPW0="
+}
